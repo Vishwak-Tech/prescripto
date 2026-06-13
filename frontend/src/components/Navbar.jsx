@@ -43,7 +43,7 @@ const Navbar = () => {
             <li className='py-1'>CONTACT</li>
             <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
         </NavLink>
-        <NavLink to='http://localhost:5174/'>
+        <NavLink to='https://prescripto-rosy-theta.vercel.app'>
             <li className='py-1 font-extrabold'>ADMIN PANEL</li>
             <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
         </NavLink>
