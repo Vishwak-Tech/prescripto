@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { useState } from 'react'
 import { AdminContext } from '../context/AdminContext'
 import axios from 'axios'
@@ -9,11 +9,21 @@ const Login = () => {
 
   const [state, setState] = useState('Admin')
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('adminvk@prescripto.com')
+  const [password, setPassword] = useState('adminvk9906')
 
   const {setAToken, backendUrl} = useContext(AdminContext)
   const {setDToken} = useContext(DoctorContext)
+
+  useEffect(() => {
+  if (state === 'Admin') {
+    setEmail('adminvk@prescripto.com')
+    setPassword('adminvk9906')
+  } else {
+    setEmail('richard@prescripto.com')
+    setPassword('richarddoc1')
+  }
+}, [state])
 
   const onSubmitHandler = async (event) => {
     event.preventDefault()
