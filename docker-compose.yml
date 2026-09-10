@@ -1,0 +1,18 @@
+services:
+
+  backend:
+    image: prescripto-backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "4000:4000"
+
+  frontend:
+    image: prescripto-frontend
+    ports:
+      - "5173:4173"
+
+  admin:
+    image: prescripto-admin
+    ports:
+      - "5174:4173"
