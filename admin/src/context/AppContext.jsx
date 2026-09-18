@@ -1,6 +1,4 @@
-import { createContext } from "react";
-
-export const AppContext = createContext()
+import { AppContext } from "./AppContext";
 
 const AppContextProvider = (props) => {
 

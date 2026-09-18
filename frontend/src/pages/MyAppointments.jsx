@@ -94,11 +94,15 @@ const MyAppointments = () => {
     }
   }
 
-  useEffect(()=>{
-    if(token){
-      getUserAppointments()
-    }
-  },[token])
+ useEffect(() => {
+   const loadAppointments = async () => {
+     if (token) {
+       await getUserAppointments()
+     }
+   }
+
+   loadAppointments()
+ }, [token])
 
   return (
     <div>

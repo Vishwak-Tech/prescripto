@@ -112,13 +112,24 @@ const Appointment = () => {
     }
   }
 
-  useEffect(() => {
-    fetchDocInfo()
-  },[doctors, docId])
 
-  useEffect(()=> {
-    getAvailableSlots()
-  },[docInfo])
+  useEffect(() => {
+   const loadDocInfo = async () => {
+     await fetchDocInfo()
+   }
+
+   loadDocInfo()
+  }, [doctors, docId])
+
+  useEffect(() => {
+   const loadSlots = async () => {
+     if (docInfo) {
+       await getAvailableSlots()
+     }
+   }
+
+   loadSlots()
+ }, [docInfo])
 
   useEffect(() => {
     console.log(docSlots)

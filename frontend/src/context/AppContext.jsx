@@ -1,10 +1,7 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from 'axios'
 import { toast } from "react-toastify";
-
-// import { doctors } from "../assets/assets";
-
-export const AppContext = createContext()
+import { AppContext } from "./AppContext";
 
 const AppContextProvider = (props) => {
 
@@ -59,18 +56,27 @@ const AppContextProvider = (props) => {
         loadUserProfileData
     }
 
-    useEffect(()=>{
-        getDoctorsData()
-    },[])
+   useEffect(() => {
+       const loadDoctors = async () => {
+          await getDoctorsData()
+       }
 
-    useEffect(()=> {
-        if(token){
-            loadUserProfileData()
+       loadDoctors()
+    }, [])
+
+  useEffect(() => {
+    const loadProfile = async () => {
+        if (token) {
+            await loadUserProfileData()
         } else {
             setUserData(false)
         }
-    },[token])
+    }
 
+    loadProfile()
+   }, [token])    
+
+  
     return (
         <AppContext.Provider value={value}>
             {props.children}

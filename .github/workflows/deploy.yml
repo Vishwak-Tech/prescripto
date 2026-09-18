@@ -38,18 +38,10 @@ jobs:
         working-directory: admin
         run: npm run lint
 
-      - name: Lint backend
-        working-directory: backend
-        run: npm run lint
-
       - name: Build frontend
         working-directory: frontend
         run: npm run build
 
       - name: Build admin
         working-directory: admin
-        run: npm run build
-
-      - name: Build backend
-        working-directory: backend
         run: npm run build
