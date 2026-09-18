@@ -80,19 +80,13 @@ jobs:
       # 7. Build Docker Images
       # -----------------------------
       - name: Build backend image
-        run: docker build
-          -t ghcr.io/vishwak-tech/prescripto-backend:${{ github.sha }} \
-          ./backend
+        run: docker build -t ghcr.io/vishwak-tech/prescripto-backend:${{ github.sha }} ./backend
 
       - name: Build frontend image
-        run: docker build
-          -t ghcr.io/vishwak-tech/prescripto-frontend:${{ github.sha }} \
-          ./frontend
+        run: docker build -t ghcr.io/vishwak-tech/prescripto-frontend:${{ github.sha }} ./frontend
 
       - name: Build admin image
-        run: docker build
-          -t ghcr.io/vishwak-tech/prescripto-admin:${{ github.sha }} \
-          ./admin
+        run: docker build -t ghcr.io/vishwak-tech/prescripto-admin:${{ github.sha }} ./admin
 
       # -----------------------------
       # 8. Push Docker Images to GHCR
