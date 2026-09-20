@@ -83,7 +83,7 @@ jobs:
         run: docker build -t ghcr.io/vishwak-tech/prescripto-backend:${{ github.sha }} ./backend
 
       - name: Build frontend image
-        run: docker build -t ghcr.io/vishwak-tech/prescripto-frontend:${{ github.sha }} ./frontend
+        run: docker build --build-arg VITE_RAZORPAY_KEY_ID=${{ secrets.VITE_RAZORPAY_KEY_ID }} -t ghcr.io/vishwak-tech/prescripto-frontend:${{ github.sha }} ./frontend
 
       - name: Build admin image
         run: docker build -t ghcr.io/vishwak-tech/prescripto-admin:${{ github.sha }} ./admin
