@@ -4,6 +4,15 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
-  server:{port:5174}
+  plugins: [react(), tailwindcss()],
+
+  base: '/admin/',
+
+  server: {
+    port: 5174
+  },
+
+  preview: {
+    allowedHosts: ['prescripto.shop', 'www.prescripto.shop']
+  }
 })

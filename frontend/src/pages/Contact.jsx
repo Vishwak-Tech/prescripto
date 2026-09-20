@@ -1,10 +1,7 @@
-import { useNavigate } from "react-router-dom"
 import { assets } from "../assets/assets"
 
 
 const Contact = () => {
-
-  const navigate = useNavigate();
 
   return (
     <div>

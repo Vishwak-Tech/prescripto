@@ -1,4 +1,4 @@
-# 🏥 Prescripto
+# Prescripto
 
 <p align="center">
 

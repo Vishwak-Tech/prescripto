@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
 import { AppContext } from "../context/AppContext";
 
@@ -6,24 +6,15 @@ import { AppContext } from "../context/AppContext";
 const Doctors = () => {
 
   const {speciality} = useParams();
-  const [filterDoc, setFilterDoc] = useState([]);
   const [showFilter, setShowFilter] = useState(false)
 
   const navigate = useNavigate()
 
   const {doctors} = useContext(AppContext)
 
-  const applyFilter = () => {
-    if(speciality) {
-      setFilterDoc(doctors.filter(doc => doc.speciality === speciality))
-    } else {
-      setFilterDoc(doctors)
-    }
-  }
-
-  useEffect(() => {
-    applyFilter()
-  }, [doctors, speciality])
+  const filterDoc = speciality
+  ? doctors.filter(doc => doc.speciality === speciality)
+  : doctors
 
   return (
     <div>

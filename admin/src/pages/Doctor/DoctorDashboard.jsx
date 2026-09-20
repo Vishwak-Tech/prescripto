@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import { AppContext } from "../../context/AppContext";
 
 const DoctorDashboard = () => {
-  const { dToken, dashData, setDashData, getDashData, cancelAppointment, completeAppointment } =useContext(DoctorContext);
+  const { dToken, dashData, getDashData, cancelAppointment, completeAppointment } =useContext(DoctorContext);
   const { currency, slotDateFormat } = useContext(AppContext);
 
   useEffect(() => {

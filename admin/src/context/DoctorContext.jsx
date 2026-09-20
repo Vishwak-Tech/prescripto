@@ -1,9 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-import { createContext } from "react";
+import { DoctorContext } from "./DoctorContext";
 import { toast } from "react-toastify";
-
-export const DoctorContext = createContext()
 
 const DoctorContextProvider = (props) => {
 
