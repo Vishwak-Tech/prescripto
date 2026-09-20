@@ -1,17 +1,17 @@
 services:
   backend:
-    image: prescripto-backend
+    image: ghcr.io/vishwak-tech/prescripto-backend:${IMAGE_TAG}
     env_file:
       - ./backend/.env
     ports:
       - "127.0.0.1:4000:4000"
 
   frontend:
-    image: prescripto-frontend
+    image: ghcr.io/vishwak-tech/prescripto-frontend:${IMAGE_TAG}
     ports:
       - "127.0.0.1:5173:4173"
 
   admin:
-    image: prescripto-admin
+    image: ghcr.io/vishwak-tech/prescripto-admin:${IMAGE_TAG}
     ports:
       - "127.0.0.1:5174:4173"
