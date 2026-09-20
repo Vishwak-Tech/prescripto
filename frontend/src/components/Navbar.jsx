@@ -38,10 +38,10 @@ const Navbar = () => {
           <li className="py-1">CONTACT</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
-        <NavLink to="https://prescripto-rosy-theta.vercel.app">
+        <a href="/admin/">
           <li className="py-1 font-extrabold">ADMIN PANEL</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
-        </NavLink>
+        </a>
       </ul>
       <div className="flex items-center gap-4">
         {token && userData ? (
